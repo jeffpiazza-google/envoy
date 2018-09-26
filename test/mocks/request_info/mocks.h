@@ -2,6 +2,8 @@
 
 #include "envoy/request_info/request_info.h"
 
+#include "common/request_info/filter_state_impl.h"
+
 #include "test/mocks/upstream/host.h"
 
 #include "gmock/gmock.h"
@@ -86,6 +88,7 @@ public:
   Network::Address::InstanceConstSharedPtr downstream_local_address_;
   Network::Address::InstanceConstSharedPtr downstream_remote_address_;
   std::string requested_server_name_;
+  FilterStateImpl per_request_state_;
 };
 
 } // namespace RequestInfo
